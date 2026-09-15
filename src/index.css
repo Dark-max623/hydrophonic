@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Base ---------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-slate-800 antialiased;
+  }
+  ::selection {
+    @apply bg-brand-500/30 text-brand-900;
+  }
+}
+
+/* ---------- Reusable component classes ---------- */
+@layer components {
+  .container-x {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-7 py-3.5
+           font-semibold text-white shadow-lg shadow-brand-600/25 transition-all duration-300
+           hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-xl hover:shadow-brand-600/30
+           focus:outline-none focus:ring-4 focus:ring-brand-500/30;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30
+           bg-white/10 px-7 py-3.5 font-semibold text-white backdrop-blur-sm transition-all
+           duration-300 hover:border-white/50 hover:bg-white/20;
+  }
+
+  .glass-card {
+    @apply rounded-3xl border border-white/20 bg-white/10 backdrop-blur-xl;
+  }
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Custom scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #16a34a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #15803d;
+}
